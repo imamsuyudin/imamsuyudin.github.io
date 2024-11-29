@@ -1,0 +1,363 @@
+:root {
+  --primary: #7a520d;
+  --color: #fefefe;
+  --background-color: #111;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+  border: none;
+  outline: none;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--background-color);
+  font-family: "Poppins", sans-serif;
+  min-height: 5000px;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  padding: 1.4rem 7%;
+  top: 0;
+  background-color: var(--background-color);
+  left: 0;
+  right: 0;
+  position: fixed;
+  z-index: 9999;
+  border-bottom: 1px solid var(--color);
+}
+
+.navbar .navbar-logo {
+  font-size: 1.7rem;
+  font-weight: 700;
+  font-style: italic;
+  color: var(--color);
+}
+
+.navbar .navbar-logo span {
+  color: var(--primary);
+}
+
+.navbar .navbar-list a {
+  display: inline-block;
+  font-size: 1.1rem;
+  font-weight: 700;
+  align-items: center;
+  color: var(--primary);
+  padding: 0.5rem;
+}
+.navbar .navbar-list a:hover {
+  color: var(--color);
+}
+.navbar .navbar-list a::after {
+  content: '';
+  display: block;
+  border-bottom: 1px solid var(--color);
+  padding-bottom: 0.5rem;
+  transform: scaleX(0);
+  transition: 0.2s linear;
+}
+.navbar .navbar-list a:hover::after {
+  transform: scaleX(0.5);
+}
+
+.navbar .nav-icon a {
+  color: var(--color);
+  margin-top: 0.6rem;
+  display: inline-block;
+}
+
+.navbar .nav-icon a:hover {
+  color: var(--background-color);
+}
+
+#hamburger-menu {
+  display: none;
+}
+
+/* ini seperti navbar property yang di gunakan */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  background-image: url(image/header-bg.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  color: #fefefe;
+  position: relative;
+}
+
+/* untuk bagian gradasi pada background konten */
+/* height & Bottom bisa mengatur ukuran jika cursor pointer tidak bisa di click  */
+.hero::after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 30%;
+  background: linear-gradient(
+    0deg,
+    rgba(1, 1, 3, 1) 8%,
+    rgba(255, 255, 255, 0) 50%
+  );
+  bottom: 0;
+}
+/* untuk atur bagian yang ada di dalam kotak konten  */
+.hero .content {
+  padding: 1.4rem 4%;
+  max-width: 60rem;
+}
+
+.hero .content h1 {
+  font-size: 5em;
+  text-shadow: 1px 1px 3px rgba (1, 1, 3, 0.5);
+  line-height: 1.2;
+}
+
+.hero .content h1 span {
+  color: var(--primary);
+}
+
+.hero .content p {
+  font-size: 1.3rem;
+  margin-top: 0.7rem;
+  line-height: 1.6rem;
+  font-weight: 100;
+  text-shadow: 1px 1px 3px rgba (1, 1, 3, 0.5);
+  mix-blend-mode: difference;
+}
+
+.hero .content .cta {
+  margin-top: 1.3rem;
+  display: inline-block;
+  padding: 1rem 3rem;
+  font-size: 1.6rem;
+  font-weight: 100;
+  color: var(--color);
+  background-color: var(--primary);
+  border-radius: 0.5rem;
+  text-shadow: 1px 1px 3px rgba (1, 1, 3, 0.5);
+}
+
+.hero .content .cta:hover{
+  background-color: #5b98d9;
+}
+
+/* Bagian Tentang Kami /ABOUT */
+.about,
+.menu,
+.contact {
+  padding: 10rem 7% 1.4rem;
+}
+.about h2,
+.menu h2,
+.contact h2 {
+  color: var(--color);
+  text-align: center;
+  font-size: 1.8rem;
+  margin-bottom: 3rem;
+  font-weight: 900;
+}
+.about h2 span,
+.menu h2 span,
+.contact h2 span {
+  color: var(--primary);
+}
+
+/* untuk atur dari ukuran atau kertas  */
+.about .row {
+  display: flex;
+}
+
+/* untuk atur flexible nya */
+.about .row .about-img {
+  flex: 1 1 45rem;
+}
+.about .row .about-img img {
+  width: 100%;
+}
+
+/* CSS untuk class konten */
+.about .row .content {
+  flex: 1 1 35rem;
+  padding: 0 1rem;
+}
+
+.about .row .content h3 {
+  font-size: 1.5rem;
+  color: var(--color);
+  margin-bottom: 1rem;
+}
+
+.about .row .content p {
+  font-size: 1rem;
+  color: var(--primary);
+  margin-bottom: 0.8rem;
+  line-height: 1.6rem;
+  font-weight: 100;
+}
+
+/* Menu Section */
+.menu h2,
+.contact h2 {
+  margin-bottom: 1.2rem;
+  color: var(--color);
+}
+
+.menu p,
+.contact p {
+  text-align: center;
+  color: var(--color);
+  max-width: 30rem;
+  margin: auto;
+  line-height: 1.6;
+  font-weight: 100;
+  font-size: 1.1rem;
+}
+
+/* menu row pada bagian list gambar menu & Tulisan harga */
+.menu .row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 5rem;
+  justify-content: center;
+}
+
+.menu .row .menu-card {
+  text-align: center;
+  padding-bottom: 2.5rem;
+}
+
+.menu .row .menu-card img {
+  border-radius: 50%;
+  width: 70%;
+}
+
+.menu .row .menu-card .menu-card-title {
+  margin-top: 1.5rem;
+  color: var(--color);
+}
+
+/* style Kontak Maps */
+.contact .row {
+  display: flex;
+  margin-top: 2rem;
+  background-color: #676259;
+  
+}
+
+.contact .row .map {
+  flex: 1 1 45rem;
+  width: 100%;
+  object-fit: cover;
+}
+
+.contact .row form {
+  flex: 1 1 45rem;
+  padding: 5rem 2rem;
+  text-align: center;
+}
+.contact .row form .input-group {
+  display: flex;
+  align-items: center;
+  margin-top: 2rem;
+  background-color: #676259;
+  border: 1px solid var(--color);
+  padding-left: 2rem;
+}
+.contact .row form .input-group .input{
+  width: 100%;
+  padding: 2rem;
+  font-size: 1.7rem;
+  background: none;
+}
+/* media queries */
+/* Laptop */
+@media (max-width: 1366px) {
+  html {
+    font-size: 75%;
+  }
+}
+/* Tablet */
+@media (max-width: 750px) {
+  html {
+    font-size: 62.5%;
+  }
+
+  #hamburger-menu {
+    display: inline-block;
+  }
+
+  .navbar .navbar-list {
+    position: absolute;
+    top: 100%;
+    background-color: var(--color);
+    right: -100%;
+    height: 100vh;
+    width: 30rem;
+    transition: 0.3s;
+  }
+
+  .navbar .navbar-list.active {
+    right: 0;
+  }
+
+  .navbar .navbar-list a {
+    display: block;
+    color: var(--background-color);
+    margin: 1.5rem;
+    padding: 0.5rem;
+    font-size: 1.2rem;
+  }
+  .navbar .navbar-list a:hover {
+    color: var(--primary);
+  }
+
+  .navbar .navbar-list a::after {
+    transform-origin: 0 0;
+    border-bottom: 1px solid var(--background-color);
+  }
+
+  .navbar .navbar-list a:hover::after {
+    transform: scaleX(0.2);
+    color: var(--background-color);
+  }
+
+  /* mengatur untuk bagian responsive pada isi tulisan jika di Hanphone */
+  .about .row {
+    flex-wrap: wrap;
+  }
+
+  .about .row .about-img img {
+    height: 24rem;
+    object-fit: cover;
+    /* object fit cover untuk supaya gambar tidak ketarik */
+    object-position: center;
+    /* object position supaya gambar tetap di tengah */
+  }
+
+  .about .row .content {
+    padding: 0;
+  }
+
+  .about .row .content h3 {
+    margin-top: 1rem;
+    font-size: 2rem;
+  }
+
+  .about .row .content p {
+    font-size: 1.3rem;
+  }
+}
+/* Mobile phone */
+@media (max-width: 450px) {
+  html {
+    font-size: 55%;
+  }
+}
